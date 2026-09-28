@@ -360,6 +360,51 @@ p { margin: 0 0 1rem; }
 .more { position: relative; }
 .more:hover { text-decoration: none; }
 
+/* ============================================================
+   Team / people
+   ============================================================ */
+.founder {
+  display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: start;
+  background: #fff; border: 1px solid var(--line); border-radius: 26px;
+  padding: 40px; box-shadow: var(--shadow-md); position: relative; overflow: hidden;
+}
+.founder::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+  background: linear-gradient(90deg, var(--flame-400), var(--emerald-700), var(--teal-500));
+}
+.founder__aside { text-align: center; position: sticky; top: 100px; }
+.avatar {
+  width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 18px; display: grid; place-items: center;
+  font-family: var(--display); font-weight: 800; font-size: 3rem; color: #fff; overflow: hidden;
+  background: linear-gradient(135deg, var(--flame-400), var(--emerald-700));
+  box-shadow: 0 14px 34px rgba(4,120,87,.32); position: relative;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.avatar--teal { background: linear-gradient(135deg, var(--teal-500), var(--teal-600)); box-shadow: 0 14px 34px rgba(13,148,136,.3); }
+.founder__aside h3 { margin: 0 0 4px; font-size: 1.35rem; }
+.founder__role { color: var(--flame-600); font-weight: 700; font-family: var(--display); font-size: .95rem; }
+.founder__badges { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 14px; }
+.founder__badges span { font-size: .74rem; font-weight: 600; color: var(--ink-700); background: var(--bg-warm); border: 1px solid var(--line); border-radius: 999px; padding: 5px 11px; }
+.founder__body p { margin-bottom: 1rem; }
+.founder__quote {
+  font-family: var(--display); font-weight: 700; font-size: 1.25rem; color: var(--ink-900);
+  border-left: 4px solid var(--flame-400); padding: 6px 0 6px 20px; margin: 22px 0 0; line-height: 1.4;
+}
+.founder__quote em { font-style: normal; }
+.two-worlds { list-style: none; padding: 0; margin: 16px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 22px; }
+.two-worlds li { position: relative; padding-left: 24px; font-weight: 600; color: var(--ink-700); }
+.two-worlds li::before { content: "🔥"; position: absolute; left: 0; font-size: .85rem; }
+@media (max-width: 760px) {
+  .founder { grid-template-columns: 1fr; gap: 26px; padding: 28px; }
+  .founder__aside { position: static; }
+  .two-worlds { grid-template-columns: 1fr; }
+}
+
+.person-card { text-align: center; }
+.person-card .avatar { width: 104px; height: 104px; font-size: 2.1rem; }
+.person-card h3 { margin: 0 0 2px; }
+.person-card .founder__role { display: block; margin-bottom: 10px; }
+
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, .hero__bg img, .cta-band::before, .banner::after, .hero__overlay::after { animation: none !important; transition: none !important; }
